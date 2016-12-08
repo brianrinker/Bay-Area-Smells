@@ -1,2 +1,2 @@
 # Bay-Area-Smells
-Final Project for Data Viz
+Brian Rinker's guide to the stinkiest smells around
