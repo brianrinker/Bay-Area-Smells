@@ -31,9 +31,9 @@
  
       #layer_selector li {
         border-bottom: 1px solid #999;
-        padding: 10px 10px;
+        padding: 15px 30px;
         font-family: "Helvetica", Arial;
-        font-size: 11px;
+        font-size: 13px;
         color: #444;
         cursor: auto;
       }
@@ -48,7 +48,7 @@
       }
     </style>
  
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css"/>
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
     <![endif]-->
@@ -56,19 +56,18 @@
   <body>
 
     <div id="map"></div>
-    
     <div id="layer_selector" class="cartodb-infobox">
       <ul>
         <li id="1" class="selected">All Odors</li>
         <li id="2">Garbage</li>
         <li id="3">Burning/Chemicals</li>
         <li id="4">Just Terrible</li>
-        <li id="5">Rotten/Sewage</li>
+        <li id="5">Rotten Sewage</li>
       </ul>
     </div>
  
     <!-- include cartodb.js library -->
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
  
     <script>
 
@@ -85,7 +84,7 @@
       var selectedLayer;
       // create layer selector
       function createSelector(layers) {
-        var sql = new cartodb.SQL({ user: 'brinker' });
+        var sql = new cartodb.SQL({ user: 'documentation' });
  
         var $options = $('#layer_selector li');
         $options.click(function(e) {
@@ -147,7 +146,7 @@
 
         // This additional section of code zooms the map one level out on small screens for a better display
         width = $(window).width();
-        // height = $(window).height();
+        height = $(window).height();
         if (width < 500) {
           // set the zoom level to 1
           map.setZoom(9);
